@@ -9,14 +9,14 @@ int main(void)
 {
 	char alp;
 
-	for (alp = 'a';alp <= 'z'; alp++)
+	for (alp = 'a'; alp <= 'z'; alp++)
 	{
 		if (alp == 'q' || alp == 'e')
 		{
-			
-		}else 
+		}
+		else
 		{
-			putchar(alp);
+		putchar(alp);
 		}
 	}
 	putchar('\n');
