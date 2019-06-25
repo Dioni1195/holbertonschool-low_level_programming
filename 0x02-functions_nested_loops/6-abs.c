@@ -1,7 +1,8 @@
 #include "holberton.h"
 
 /**
-  * int _abs(int) - Entry point
+  * _abs - Entry point
+  *@n: Value passed to verify
   *
   * Return: Always 0 (Success)
   */
@@ -19,7 +20,7 @@ int _abs(int n)
 	}
 	else
 	{
-		r = 0 -(n);
+		r = 0 - (n);
 	}
 return (r);
 }
