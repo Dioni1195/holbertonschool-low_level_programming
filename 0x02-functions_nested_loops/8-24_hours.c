@@ -12,18 +12,30 @@ void jack_bauer(void)
 
 	for (h = 48; h <= 50; h++)
 	{
-		for (m = 48; m <= 51; m++)
+		for (m = 48; m <= 57; m++)
 		{
 			for (s = 48; s <= 53; s++)
 			{
 				for (cs = 48; cs <= 57; cs++)
 				{
-					_putchar(h);
-					_putchar(m);
-					_putchar(58);
-					_putchar(s);
-					_putchar(cs);
-					_putchar('\n');
+					if (h <= 49)
+					{
+						_putchar(h);
+						_putchar(m);
+						_putchar(58);
+						_putchar(s);
+						_putchar(cs);
+						_putchar('\n');
+					}
+					if ((h == 50) && (m <= 51))
+					{
+						_putchar(h);
+						_putchar(m);
+						_putchar(58);
+						_putchar(s);
+						_putchar(cs);
+						_putchar('\n');
+					}
 				}
 			}
 		}
