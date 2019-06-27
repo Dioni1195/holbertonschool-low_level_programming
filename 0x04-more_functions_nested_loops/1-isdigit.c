@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
-* _putchar - writes the character c to stdout
+* _isdigit - writes the character c to stdout
 * @c: The character to print
 *
 * Return: On success 1.
@@ -14,7 +14,7 @@ int _isdigit(int c)
 	r = 0;
 	for (i = 48; i <= 57; i++)
 	{
-		if ( c == i)
+		if (c == i)
 		{
 			r = 1;
 		}
