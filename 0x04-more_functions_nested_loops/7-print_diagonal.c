@@ -24,7 +24,7 @@ void print_diagonal(int n)
 					j--;
 				}
 			}
-			_putchar(47);
+			_putchar(92);
 			_putchar(10);
 		}
 	}
