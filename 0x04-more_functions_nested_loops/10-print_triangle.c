@@ -16,7 +16,7 @@ void print_triangle(int size)
 		for (i = 0; i < size; i++)
 		{
 			num = i + 1;
-			for (j = 0; j < size; j++)
+			for (j = size - 1; j < size; j++)
 			{
 				esp = size - num;
 				while (esp > 0)
