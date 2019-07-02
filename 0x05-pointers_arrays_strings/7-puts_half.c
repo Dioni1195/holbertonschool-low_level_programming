@@ -28,16 +28,16 @@ return (i);
 */
 void puts_half(char *str)
 {
-	int tam, n;
+	int length_of_the_string, n;
 
-	tam = _strlen(str);
-	if (tam % 2 == 0)
+	length_of_the_string = _strlen(str);
+	if (length_of_the_string % 2 == 0)
 	{
-		n = tam / 2;
+		n = length_of_the_string / 2;
 	}
 	else
 	{
-		n = (tam - 1) / 2;
+		n = (length_of_the_string - 1) / 2;
 	}
 	while (str[n])
 	{
