@@ -28,21 +28,21 @@ return (i);
 */
 void puts_half(char *str)
 {
-	int length_of_the_string, n;
+	int tam, n, i;
 
-	length_of_the_string = _strlen(str);
-	if (length_of_the_string % 2 == 0)
+	tam = _strlen(str);
+	if (tam % 2 == 0)
 	{
-		n = length_of_the_string / 2;
+		n = tam / 2;
 	}
 	else
 	{
-		n = (length_of_the_string - 1) / 2;
+		n = (tam - 1) / 2;
 	}
-	while (str[n])
+	i = tam - n;
+	for (; i < tam; i++)
 	{
-	_putchar(str[n]);
-		n++;
+	_putchar(str[i]);
 	}
 	_putchar(10);
 }
