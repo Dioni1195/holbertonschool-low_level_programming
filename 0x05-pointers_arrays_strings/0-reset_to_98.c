@@ -1,8 +1,8 @@
 #include "holberton.h"
 
 /**
-  * _isdigit - writes the character c to stdout
-  * @c: The character to print
+  * reset_to_98 - writes the character c to stdout
+  * @n: The pointer that link to the address of variable to be modified
   *
   * Return: On success 1.
   * On error, -1 is returned, and errno is set appropriately.
