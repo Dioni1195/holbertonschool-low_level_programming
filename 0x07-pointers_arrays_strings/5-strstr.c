@@ -10,7 +10,7 @@ int _strlen(char *s)
 	int i;
 
 	i = 0;
-	while (s[i])
+	while (s[i] != '\0')
 	{
 		i++;
 	}
@@ -74,19 +74,15 @@ char *_strstr(char *haystack, char *needle)
 	haysLeng = _strlen(haystack);
 	needLeng = _strlen(needle);
 	i = 0;
-	while (i < (haysLeng - needLeng))
+	while (i <= (haysLeng - needLeng))
 	{
 		_strncpy(buff, haystack + i, needLeng);
 		buff[needLeng] = '\0';
 		j = _strcmp(buff, needle);
-			if (j == 0)
-			{
-				return (haystack + i);
-			}
-			else
-			{
-				continue;
-			}
+		if (j == 0)
+		{
+			return (haystack + i);
+		}
 		i++;
 	}
 return (0);
