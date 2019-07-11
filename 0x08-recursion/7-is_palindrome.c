@@ -65,13 +65,20 @@ int is_palindrome(char *s)
 	int tam, eql;
 
 	tam = _strlen_recursion(s);
-	eql = _mirror(s, tam);
-	if (eql == 1)
+	if (tam == 0)
 	{
 		return (1);
 	}
 	else
 	{
+		eql = _mirror(s, tam);
+		if (eql == 1)
+		{
+			return (1);
+		}
+		else
+		{
 		return (0);
+		}
 	}
 }
