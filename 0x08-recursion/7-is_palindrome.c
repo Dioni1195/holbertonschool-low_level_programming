@@ -1,4 +1,3 @@
-
 /**
  * _strlen_recursion - Calculate the lenght of a string
  * @s: The array to evaluate
@@ -38,12 +37,12 @@ int _mirror(char *s, int n)
 	{
 		return (1);
 	}
-	if (*s == *(s + cont))
+	if (*s == s[cont])
 	{
 		igl = _mirror(s + 1, n - 2);
 		if (igl == -1)
 		{
-			return (-2);
+			return (-1);
 		}
 		else
 		{
