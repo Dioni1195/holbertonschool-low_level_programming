@@ -1,5 +1,4 @@
 
-
 /**
  * _strlen_recursion - Calculate the lenght of a string
  * @s: The array to evaluate
@@ -46,7 +45,10 @@ int _mirror(char *s, int n)
 		{
 			return (-2);
 		}
-		return (1);
+		else
+		{
+			return (1);
+		}
 	}
 	else
 	{
@@ -78,7 +80,7 @@ int is_palindrome(char *s)
 		}
 		else
 		{
-		return (0);
+			return (0);
 		}
 	}
 }
