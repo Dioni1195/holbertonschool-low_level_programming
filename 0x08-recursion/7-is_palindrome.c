@@ -31,7 +31,7 @@ int _strlen_recursion(char *s)
  */
 int _mirror(char *s, int n)
 {
-	int cont = n - 1, igl;
+	int cont = n - 1;
 
 	if (cont == 0)
 	{
@@ -39,19 +39,12 @@ int _mirror(char *s, int n)
 	}
 	if (*s == s[cont])
 	{
-		igl = _mirror(s + 1, n - 2);
-		if (igl == -1)
-		{
-			return (-1);
-		}
-		else
-		{
-			return (1);
-		}
+		_mirror(s + 1, n - 2);
+		return (1);
 	}
 	else
 	{
-		return (-1);
+		return (0);
 	}
 }
 /**
@@ -63,7 +56,7 @@ int _mirror(char *s, int n)
  */
 int is_palindrome(char *s)
 {
-	int tam, eql;
+	int tam;
 
 	tam = _strlen_recursion(s);
 	if (tam == 0)
@@ -72,14 +65,6 @@ int is_palindrome(char *s)
 	}
 	else
 	{
-		eql = _mirror(s, tam);
-		if (eql == 1)
-		{
-			return (1);
-		}
-		else
-		{
-			return (0);
-		}
+		return( _mirror(s, tam));
 	}
 }
