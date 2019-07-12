@@ -39,8 +39,7 @@ int _mirror(char *s, int n)
 	}
 	if (*s == s[cont])
 	{
-		_mirror(s + 1, n - 2);
-		return (1);
+		return (_mirror(s + 1, n - 2));
 	}
 	else
 	{
