@@ -65,6 +65,6 @@ int is_palindrome(char *s)
 	}
 	else
 	{
-		return( _mirror(s, tam));
+		return (_mirror(s, tam));
 	}
 }
