@@ -33,13 +33,23 @@ int _mirror(char *s, int n)
 {
 	int cont = n - 1;
 
-	if (cont == 0)
+	if (n % 2 != 0)
 	{
-		return (1);
+		if (cont == 0)
+		{
+			return (1);
+		}
+	}
+	else
+	{
+		if (n == 0)
+		{
+			return (1);
+		}
 	}
 	if (*s == s[cont])
 	{
-		return (_mirror(s + 1, n - 2));
+		return (_mirror(s + 1, cont - 1));
 	}
 	else
 	{
