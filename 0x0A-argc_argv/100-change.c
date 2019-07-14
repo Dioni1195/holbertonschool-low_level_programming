@@ -33,7 +33,7 @@ int change(int n)
 */
 int main(int argc, char *argv[])
 {
-	int coins, mod, con1;
+	int coins, con1;
 
 	if (argc != 2)
 	{
@@ -47,9 +47,6 @@ int main(int argc, char *argv[])
 	}
 	else
 	{
-		mod = coins % 10;
-		if (mod != 0 && mod != 5)
-			coins -= mod;
 		con1 = change(coins);
 		printf("%d\n", con1);
 	}
