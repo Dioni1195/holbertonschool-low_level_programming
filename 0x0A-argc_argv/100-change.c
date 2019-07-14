@@ -35,18 +35,18 @@ int main(int argc, char *argv[])
 {
 	int coins, mod, con1;
 
-	if (atoi(argv[1]) < 0)
+	if (argc != 2)
+	{
+		printf("Error\n");
+		return (1);
+	}
+	coins = atoi(*(argv + 1));
+	if (coins < 0)
 	{
 		printf("0\n");
 	}
 	else
 	{
-		if (argc != 2)
-		{
-			printf("Error\n");
-			return (1);
-		}
-		coins = atoi(*(argv + 1));
 		mod = coins % 10;
 		if (mod != 0 && mod != 5)
 			coins -= mod;
