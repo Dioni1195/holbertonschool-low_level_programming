@@ -44,11 +44,12 @@ int main(int argc, char *argv[])
 	if (coins < 0)
 	{
 		printf("0\n");
+		return (1);
 	}
 	else
 	{
 		con1 = change(coins);
 		printf("%d\n", con1);
+		return (0);
 	}
-	return (0);
 }
