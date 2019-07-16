@@ -20,16 +20,27 @@ char *str_concat(char *s1, char *s2)
 	}
 	else
 	{
-		for (i = 0; s1[i] != '\0'; i++)
+		if (s1 != NULL && s2 != NULL)
 		{
-			buff[i] = s1[i];
+			for (i = 0; s1[i] != '\0'; i++)
+				buff[i] = s1[i];
+			for (j = i; s2[in] != '\0'; j++)
+			{
+				buff[j] = s2[in];
+				in++;
+			}
+			buff[j] = '\0';
 		}
-		for (j = i; s2[in] != '\0'; j++)
+		else if (s1 == NULL)
 		{
-			buff[j] = s2[in];
-			in++;
+			for (j = 0; s2[j] != '\0'; j++)
+				buff[j] = s2[j];
 		}
-		buff[j] = '\0';
+		else if (s2 == NULL)
+		{
+			for (i = 0; s1[i] != '\0'; i++)
+				buff[i] = s1[i];
+		}
 		return (buff);
 	}
 }
