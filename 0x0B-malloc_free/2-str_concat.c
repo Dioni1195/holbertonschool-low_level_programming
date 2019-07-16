@@ -1,5 +1,12 @@
 #include <stdlib.h>
 
+/**
+* _strlen - Calculate lenght
+* @s: The array
+*
+* Return: A pointer.
+* On error, retunr NULL.
+*/
 int _strlen(char *s)
 {
 	int i;
@@ -27,7 +34,7 @@ char *str_concat(char *s1, char *s2)
 	if (s2 == NULL)
 		s2 = "";
 	tam = (_strlen(s1) + _strlen(s2));
-	buff = malloc (tam + 2);
+	buff = malloc(tam + 2);
 	in = 0;
 	if (buff == NULL)
 	{
