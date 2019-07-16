@@ -1,4 +1,5 @@
 #include <stdlib.h>
+
 /**
 * _strlen - Calcualte the lenght of an array
 * @s: The array to be calculated
@@ -14,7 +15,7 @@ int _strlen(char *s)
 	i = 0;
 	while (s[i] != '\0')
 		i++;
-	return(i);
+	return (i);
 }
 /**
 * _strdup - Copy an array or return NULL
@@ -26,7 +27,7 @@ int _strlen(char *s)
 char *_strdup(char *str)
 {
 	int i;
-	char *buff =(char *)malloc(sizeof(char) * (_strlen(str) + 1));
+	char *buff = malloc(sizeof(char) * (_strlen(str) + 1));
 
 	i = 0;
 	if (buff == NULL || str == NULL)
@@ -40,6 +41,7 @@ char *_strdup(char *str)
 			buff[i] = str[i];
 			i++;
 		}
+		buff[i] = '\0';
 		return (buff);
 	}
 }
