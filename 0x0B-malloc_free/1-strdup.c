@@ -1,5 +1,15 @@
 #include <stdlib.h>
+#include <stdio.h>
 
+int _strlen(char *s)
+{
+	int i;
+
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	return(i);
+}
 /**
 * _strdup - Copy an array or return NULL
 * @str: The string to be copied
@@ -10,7 +20,7 @@
 char *_strdup(char *str)
 {
 	int i;
-	char *buff = malloc(sizeof(str));
+	char *buff = malloc(sizeof(char) * (_strlen(str) + 1));
 
 	i = 0;
 	if (buff == NULL || str == NULL)
