@@ -1,5 +1,14 @@
 #include <stdlib.h>
 
+int _strlen(char *s)
+{
+	int i;
+
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	return (i);
+}
 /**
 * str_concat- Concatenate two arrays
 * @s1: The first array
@@ -10,37 +19,27 @@
 */
 char *str_concat(char *s1, char *s2)
 {
-	unsigned int i, j, in, tam = sizeof(s1) + sizeof(s2);
-	char *buff = malloc(tam);
+	unsigned int i, j, in, tam;
+	char *buff;
 
+	if (s1 == NULL)
+		s1 = "";
+	if (s2 == NULL)
+		s2 = "";
+	tam = (_strlen(s1) + _strlen(s2));
+	buff = malloc (tam + 2);
 	in = 0;
 	if (buff == NULL)
 	{
 		return (NULL);
 	}
-	else
+	for (i = 0; s1[i] != '\0'; i++)
+		buff[i] = s1[i];
+	for (j = i; s2[in] != '\0'; j++)
 	{
-		if (s1 != NULL && s2 != NULL)
-		{
-			for (i = 0; s1[i] != '\0'; i++)
-				buff[i] = s1[i];
-			for (j = i; s2[in] != '\0'; j++)
-			{
-				buff[j] = s2[in];
-				in++;
-			}
-			buff[j] = '\0';
-		}
-		else if (s1 == NULL)
-		{
-			for (j = 0; s2[j] != '\0'; j++)
-				buff[j] = s2[j];
-		}
-		else if (s2 == NULL)
-		{
-			for (i = 0; s1[i] != '\0'; i++)
-				buff[i] = s1[i];
-		}
-		return (buff);
+		buff[j] = s2[in];
+		in++;
 	}
+	buff[j] = '\0';
+	return (buff);
 }
