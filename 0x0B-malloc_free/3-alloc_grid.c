@@ -1,22 +1,6 @@
 #include <stdlib.h>
 
 /**
-  * _strlen - Calculate lenght
-  * @s: The array
-  *
-  * Return: A pointer.
-  * On error, retunr NULL.
-  */
-int _strlen(char *s)
-{
-		int i;
-
-		i = 0;
-		while (s[i] != '\0')
-			i++;
-		return (i);
-}
-/**
 * alloc_grid - Create a grid
 * @width: width of the array
 * @height: height of the array
@@ -51,13 +35,9 @@ int **alloc_grid(int width, int height)
 	}
 	for (i = 0; i < height; i++)
 	{
-		for (j = 0; j < width; j++)
+		for ( j = 0; j < width; j++)
 		{
-			p[i][j] = 0;
+			*(p + i) = 0;
 		}
-	}
 	return (p);
 }
-
-
-
