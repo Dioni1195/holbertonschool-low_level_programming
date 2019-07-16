@@ -27,13 +27,14 @@ int _strlen(char *s)
 char *_strdup(char *str)
 {
 	int i;
-	char *buff = malloc(_strlen(str) + 1);
+	char *buff;
 
 	i = 0;
-	if (buff == NULL || str == NULL)
-	{
+	if (str == NULL)
 		return (NULL);
-	}
+	buff = malloc(_strlen(str) + 1);
+	if (buff == NULL)
+		return (NULL);
 	while (str[i] != '\0')
 	{
 		buff[i] = str[i];
