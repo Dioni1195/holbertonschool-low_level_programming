@@ -34,14 +34,11 @@ char *_strdup(char *str)
 	{
 		return (NULL);
 	}
-	else
+	while (str[i] != '\0')
 	{
-		while (str[i] != '\0')
-		{
-			buff[i] = str[i];
-			i++;
-		}
-		buff[i] = '\0';
-		return (buff);
+		buff[i] = str[i];
+		i++;
 	}
+	buff[i] = '\0';
+	return (buff);
 }
