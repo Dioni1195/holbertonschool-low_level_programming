@@ -34,7 +34,7 @@ char *str_concat(char *s1, char *s2)
 	if (s2 == NULL)
 		s2 = "";
 	tam = (_strlen(s1) + _strlen(s2));
-	buff = malloc(tam + 2);
+	buff = malloc(tam + 1);
 	in = 0;
 	if (buff == NULL)
 	{
