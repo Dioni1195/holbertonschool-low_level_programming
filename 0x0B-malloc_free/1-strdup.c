@@ -1,5 +1,11 @@
 #include <stdlib.h>
-#include <stdio.h>
+/**
+* _strlen - Calcualte the lenght of an array
+* @s: The array to be calculated
+*
+* Return: On success a pointer.
+* On error, NULL is returned.
+*/
 
 int _strlen(char *s)
 {
@@ -20,7 +26,7 @@ int _strlen(char *s)
 char *_strdup(char *str)
 {
 	int i;
-	char *buff = malloc(sizeof(char) * (_strlen(str) + 1));
+	char *buff =(char *)malloc(sizeof(char) * (_strlen(str) + 1));
 
 	i = 0;
 	if (buff == NULL || str == NULL)
