@@ -18,12 +18,12 @@ int _strlen(char *s)
 	return (i);
 }
 /**
- * dog_t new_dog - Create a dog
+ * *new_dog - Create a dog
  * @name: Name of the dog
  * @age: Age of the dog
  * @owner: Owner of the dog
  *
- * Description: Register a new dog
+ * Return: nd
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
@@ -36,7 +36,11 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	nameP = malloc(sizeof(char) * (tamName + 1));
 	if (nameP == NULL)
+	{
+		free(nameP);
+		free(nd);
 		return (NULL);
+	}
 	for (i = 0; name[i] != '\0'; i++)
 		nameP[i] = name[i];
 	nameP[i] = '\0';
@@ -44,7 +48,17 @@ dog_t *new_dog(char *name, float age, char *owner)
 	nd->age = age;
 	ownP = malloc(sizeof(char) * (tamOwn + 1));
 	if (ownP == NULL)
+	{
+		free(nameP);
+		free(ownP);
+		free(nd);
 		return (NULL);
+	}
+	for (i = 0; name[i] != '\0'; i++)
+		nameP[i] = name[i];
+	nameP[i] = '\0';
+	nd->name = nameP;
+	nd->age = age;
 	for (i = 0; owner[i] != '\0'; i++)
 		ownP[i] = owner[i];
 	ownP[i] = '\0';
