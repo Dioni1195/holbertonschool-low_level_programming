@@ -9,7 +9,7 @@
   * Return: On success 1.
   * On error, -1 is returned, and errno is set appropriately.
   */
-int main (int argc, char *argv[])
+int main(int argc, char *argv[])
 {
 	int a = atoi(argv[1]), b = atoi(argv[3]), result;
 
