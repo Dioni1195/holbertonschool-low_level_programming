@@ -7,9 +7,9 @@
  * Return: On success 1.
  * On error, -1 is returned, and errno is set appropriately.
 */
-size_t _strlen(char *s)
+int _strlen(char *s)
 {
-	size_t i = 0;
+	int i = 0;
 
 	while (s[i] != '\0')
 		i++;
@@ -28,7 +28,7 @@ int create_file(const char *filename, char *text_content)
 {
 	int fd;
 	ssize_t wr = 0;
-	size_t txt_len;
+	int txt_len;
 
 	txt_len = _strlen(text_content);
 	if (filename == NULL)
