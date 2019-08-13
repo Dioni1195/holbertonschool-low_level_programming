@@ -36,9 +36,10 @@ int create_file(const char *filename, char *text_content)
 		return (-1);
 	if (text_content != NULL)
 	{
-		wr = write(fd, text_content, (size_t)(txt_len));
+		wr = write(fd, text_content, txt_len);
 		if (wr == -1)
 			return (-1);
 	}
+	close (fd);
 	return (1);
 }
