@@ -21,6 +21,8 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	if (fl == -1)
 		return (0);
 	buf = malloc(sizeof(char) * letters);
+	if (!buf)
+		return (NULL);
 	rd = read(fl, buf, letters);
 	if (rd == -1)
 	{
