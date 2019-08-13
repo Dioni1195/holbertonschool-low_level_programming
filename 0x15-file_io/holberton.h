@@ -1,4 +1,4 @@
-#ifndef HOLBERTON_H 
+#ifndef HOLBERTON_H
 #define HOLBERTON_H
 #include <sys/types.h>
 #include <unistd.h>
