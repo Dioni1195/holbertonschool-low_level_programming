@@ -68,7 +68,7 @@ int main(int argc, char **argv)
 	fd1 = open(file_from, O_RDONLY);
 	if (fd1 == -1)
 		error98(file_from);
-	fd2 = open(file_to, O_RDWR | O_CREAT | O_TRUNC, 0664);
+	fd2 = open(file_to, O_WRONLY | O_CREAT | O_TRUNC, 0664);
 	if (fd2 == -1)
 		error99(file_to);
 	rd = read(fd1, s, 1024);
