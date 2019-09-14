@@ -1,5 +1,13 @@
 #include "lists.h"
-
+/**
+  * insert_dnodeint_at_index - Insert a node at index
+  * @h: The list to verify
+  * @idx: The index to find
+  * @n: The constant to add
+  *
+  * Return: nothing
+  * On error, nothing
+  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
 	dlistint_t *aux, *newNode;
