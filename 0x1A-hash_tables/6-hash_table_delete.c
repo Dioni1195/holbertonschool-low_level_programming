@@ -19,10 +19,13 @@ void hash_table_delete(hash_table_t *ht)
 			while (aux)
 			{
 				aux2 = aux->next;
+				free(aux->value);
+				free(aux->key);
 				free(aux);
 				aux = aux2;
 			}
 			idx_arr++;
+			free(ht->array);
 		}
 		free(ht);
 	}
