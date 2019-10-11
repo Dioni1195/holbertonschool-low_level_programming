@@ -9,7 +9,7 @@
 void hash_table_delete(hash_table_t *ht)
 {
 	hash_node_t *aux, *aux2;
-	unsigned long int idx_arr = 0, cont = 0;
+	unsigned long int idx_arr = 0;
 
 	if (ht)
 	{
@@ -20,7 +20,7 @@ void hash_table_delete(hash_table_t *ht)
 			{
 				aux2 = aux->next;
 				free(aux);
-				aux = aux2
+				aux = aux2;
 			}
 			idx_arr++;
 		}
