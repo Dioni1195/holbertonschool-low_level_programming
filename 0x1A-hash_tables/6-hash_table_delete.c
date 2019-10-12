@@ -11,22 +11,21 @@ void hash_table_delete(hash_table_t *ht)
 	hash_node_t *aux, *aux2;
 	unsigned long int idx_arr = 0;
 
-	if (ht)
+	if (!ht)
+		return;
+	while (idx_arr < ht->size)
 	{
-		while (idx_arr < ht->size)
-		{
-			aux = ht->array[idx_arr];
+		aux = ht->array[idx_arr];
 			while (aux)
-			{
-				aux2 = aux;
-				free(aux2->value);
-				free(aux2->key);
-				aux = aux->next;
-				free(aux2);
-			}
-			idx_arr++;
+		{
+			aux2 = aux;
+			free(aux2->value);
+			free(aux2->key);
+			aux = aux->next;
+			free(aux2);
 		}
-		free(ht->array);
-		free(ht);
+		idx_arr++;
 	}
+	free(ht->array);
+	free(ht);
 }
