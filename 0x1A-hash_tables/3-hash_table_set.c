@@ -52,6 +52,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		{
 			if (strcmp(aux->key, key) == 0)
 			{
+				free(aux->value);
 				aux->value = strdup(value);
 				flg = 1;
 			}
