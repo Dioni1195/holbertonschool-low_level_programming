@@ -9,7 +9,7 @@
 void hash_table_delete(hash_table_t *ht)
 {
 	hash_node_t *aux, *aux2;
-	unsigned long int idx_arr = 0;
+	unsigned int idx_arr = 0;
 
 	if (!ht)
 		return;
