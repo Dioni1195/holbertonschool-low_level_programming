@@ -16,11 +16,13 @@ int partition(int *array, int low, int highest, size_t size)
 	{
 		if (array[j] < pivoter)
 		{
-			tmp = array[i];
-			array[i] = array[j];
-			array[j] = tmp;
 			if (i != j)
+			{
+				tmp = array[i];
+				array[i] = array[j];
+				array[j] = tmp;
 				print_array(array, size);
+			}
 			i++;
 		}
 	}
