@@ -54,16 +54,16 @@ listint_t *get_dnodeint_at_index(listint_t *head, unsigned int index)
   */
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *aux = *list, *nod_nxt, *nod_prv;
+	listint_t *aux, *nod_nxt, *nod_prv;
 	unsigned int i = 1, j;
 	size_t len_list;
 
 	if (list == NULL || *list == NULL)
 		return;
+	aux = *list;
 	len_list = list_len(aux);
 	if (len_list <= 1)
 		return;
-
 	while (i < len_list)
 	{
 		nod_nxt = get_dnodeint_at_index(aux, i);
