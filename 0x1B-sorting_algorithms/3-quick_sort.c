@@ -31,8 +31,7 @@ int partition(int *array, int low, int highest, size_t size)
 		tmp = array[i];
 		array[i] = array[highest];
 		array[highest] = tmp;
-		if (i != j)
-			print_array(array, size);
+		print_array(array, size);
 	}
 	return (i);
 }
