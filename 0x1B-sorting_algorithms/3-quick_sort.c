@@ -19,13 +19,16 @@ int partition(int *array, int low, int highest, size_t size)
 			tmp = array[i];
 			array[i] = array[j];
 			array[j] = tmp;
+			if (i != j)
+				print_array(array, size);
 			i++;
 		}
 	}
 	tmp = array[i];
 	array[i] = array[highest];
 	array[highest] = tmp;
-	print_array(array, size);
+	if (i != j)
+		print_array(array, size);
 	return (i);
 }
 /**
