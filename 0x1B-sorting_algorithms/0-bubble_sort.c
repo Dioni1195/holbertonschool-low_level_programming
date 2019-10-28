@@ -10,19 +10,22 @@ void bubble_sort(int *array, size_t size)
 	size_t newn = 0, i, n = size;
 	int tmp;
 
-	do {
-		newn = 0;
-		for (i = 1; i <= n - 1; i++)
-		{
-			if (array[i - 1] > array[i])
+	if (array != NULL)
+	{
+		do {
+			newn = 0;
+			for (i = 1; i <= n - 1; i++)
 			{
-				tmp = array[i - 1];
-				array[i - 1] = array[i];
-				array[i] = tmp;
-				newn = i;
-				print_array(array, size);
+				if (array[i - 1] > array[i])
+				{
+					tmp = array[i - 1];
+					array[i - 1] = array[i];
+					array[i] = tmp;
+					newn = i;
+					print_array(array, size);
+				}
 			}
-		}
-		n = newn;
-	} while (n > 1);
+			n = newn;
+		} while (n > 1);
+	}
 }
