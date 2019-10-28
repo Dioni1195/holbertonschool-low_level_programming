@@ -26,11 +26,14 @@ int partition(int *array, int low, int highest, size_t size)
 			i++;
 		}
 	}
-	tmp = array[i];
-	array[i] = array[highest];
-	array[highest] = tmp;
-	if (i != j)
-		print_array(array, size);
+	if (array[highest] < array[i])
+	{
+		tmp = array[i];
+		array[i] = array[highest];
+		array[highest] = tmp;
+		if (i != j)
+			print_array(array, size);
+	}
 	return (i);
 }
 /**
