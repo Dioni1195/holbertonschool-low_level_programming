@@ -8,44 +8,44 @@
 */
 void counting_sort(int *array, size_t size)
 {
-	size_t i = 0, j = 0, size_arr, *value_arr, value, idx;
-	int min, max;
+	size_t i = 0, j = 0, value, idx;
+	int max = array[0], *value_arr, *tmp;
 
-	min = array[0];
-	max = array[0];
-	while (i < size)
+	if (array != NULL || size > 1)
 	{
-		if (min > array[i])
-			min = array[i];
-		if (max < array[i])
-			max = array[i];
-		i++;
+		tmp = malloc(sizeof(int) * size);
+		if (!tmp)
+			return;
+		while (i < size)
+		{
+			tmp[i] = array[i];
+			if (max < array[i])
+				max = array[i];
+			i++;
+		}
+		value_arr = malloc(sizeof(int) * (max + 1));
+		if (!value_arr)
+			return;
+		while (j < (size_t)(max + 1))
+		{
+			value_arr[j] = 0;
+			j++;
+		}
+		for (i = 0; i < size; i++)
+		{
+			value = array[i];
+			value_arr[value] += 1;
+		}
+		for (j = 1; j < (size_t)(max + 1); j++)
+			value_arr[j] += value_arr[j - 1];
+		print_array(value_arr, max + 1);
+		for (i = 0; i < size; i++)
+		{
+			idx = value_arr[tmp[i]];
+			array[idx - 1] = tmp[i];
+			value_arr[tmp[i]] -= 1;
+		}
+		free(tmp);
+		free(value_arr);
 	}
-	size_arr = max - min;
-	value_arr = malloc(sizeof(int) * size_arr);
-	if (!value_arr)
-		return;
-	while (j < size_arr)
-	{
-		value_arr[j] = 0;
-		j++;
-	}
-	/* Counting the times of appareances */
-	for (i = 0; i < size; i++)
-	{
-		value = array[i];
-		value_arr[value] += 1;
-	}
-	/* Adding values */
-	for(j = 1; j < size_arr; j++)
-		value_arr[j] += value_arr[j - 1];
-	/* Assignning new positions */
-	for(i = 0; i < size; i++)
-	{
-		value = array[i];
-		idx = value_arr[value];
-		array[idx - 1] = value;
-		value_arr[value] -= 1;
-	}
-	free(value_arr);
 }
