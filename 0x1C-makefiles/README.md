@@ -16,3 +16,4 @@ This project helps to understand the following topics:
 File Name | Description
 --- | ---
 0-Makefile | How create a simple Makefile file without varibales with 'all' rule
+1-Makefile | How create a Makefile with variables
