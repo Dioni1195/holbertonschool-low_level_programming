@@ -18,3 +18,6 @@ File Name | Description
 0-Makefile | How create a simple Makefile file without varibales with 'all' rule
 1-Makefile | How create a Makefile with variables
 2-Makefile | How create a useful Makefile that recompile objects files when the file is updated
+3-Makefile | How create a useful Makefile that recompile objects files when the file is updated and delete object files
+4-Makefile | How create a useful Makefile that recompile objects files when the file is updated with specific compilation files
+5-island_perimeter.py | Function that find the perimeter of a grid
