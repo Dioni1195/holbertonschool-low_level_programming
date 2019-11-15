@@ -1,6 +1,6 @@
-CC := gcc
-SRC := main.c holberton.c
-NAME := holberton
+CC = gcc
+SRC = main.c holberton.c
+NAME = holberton
 OBJ := ${SRC:%.c=%.o}
 
 all: ${OBJ}
