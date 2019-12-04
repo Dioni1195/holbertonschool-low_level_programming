@@ -1,21 +1,4 @@
 #include "binary_trees.h"
-/**
- * binary_tree_balance - Calculate the balance
- * @tree: The binary tree
- *Return: If the tree is balanced
-*/
-int binary_tree_balance(const binary_tree_t *tree)
-{
-	int left = 0, right = 0;
-
-	if (!tree)
-		return (0);
-	if (tree->left)
-		left = height_recur(tree->left);
-	if (tree->right)
-		right = height_recur(tree->right);
-	return (left - right);
-}
 
 /**
  * height_recur - Calculate the height of a node
@@ -33,6 +16,24 @@ int height_recur(const binary_tree_t *tree)
 	if (left < right)
 		return (right + 1);
 	return (left + 1);
+}
+
+/**
+ * binary_tree_balance - Calculate the balance
+ * @tree: The binary tree
+ *Return: If the tree is balanced
+*/
+int binary_tree_balance(const binary_tree_t *tree)
+{
+	int left = 0, right = 0;
+
+	if (!tree)
+		return (0);
+	if (tree->left)
+		left = height_recur(tree->left);
+	if (tree->right)
+		right = height_recur(tree->right);
+	return (left - right);
 }
 
 /**
@@ -73,7 +74,7 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 	is_balanced = binary_tree_balance(tree);
 	is_full = binary_tree_is_full(tree);
 	if ((is_balanced == 0 && is_full == 1) &&
-		(left = 1 && right = 1))
+		(left == 1 && right == 1))
 		return (1);
 	return (0);
 }
