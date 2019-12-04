@@ -5,6 +5,8 @@
   */
 void del_recur(binary_tree_t *tree)
 {
+	if (!tree)
+		return;
 	if (tree->left)
 		del_recur(tree->left);
 	if (tree->right)
