@@ -1,10 +1,13 @@
 #include "binary_trees.h"
-
+/**
+  * del_recur - Deletion recursive
+  * @tree: The tree
+  */
 void del_recur(binary_tree_t *tree)
 {
-	if(tree->left)
+	if (tree->left)
 		del_recur(tree->left);
-	if(tree->right)
+	if (tree->right)
 		del_recur(tree->right);
 	free(tree);
 }
@@ -15,7 +18,7 @@ void del_recur(binary_tree_t *tree)
 */
 void binary_tree_delete(binary_tree_t *tree)
 {
-	if(tree)
+	if (tree)
 	{
 		del_recur(tree);
 	}
