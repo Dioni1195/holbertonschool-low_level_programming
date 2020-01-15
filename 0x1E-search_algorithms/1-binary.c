@@ -30,6 +30,8 @@ int binary_search(int *array, size_t size, int value)
 {
 	int prev, next, mid;
 
+	if (!array)
+		return (-1);
 	prev = 0;
 	next = (int)(size - 1);
 	while (prev != next)
