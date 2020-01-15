@@ -1,19 +1,20 @@
 #include "search_algos.h"
 
 /**
-  * cpyint -  Create a new array
+  * print_array -  Print an array
   * @array: The array
-  * @size: The size of the array
+  * @prev: The first pos
+  * @next: The last pos
   * Return: The new array
    */
-void print_array(int *array, size_t size)
+void print_array(int *array, int prev, int next)
 {
-	size_t i;
+	int i;
 
 	printf("Searching in array: ");
-	for (i = 0; i < size; i++)
-		if (i == size - 1)
-			printf("%d\n",array[i]);
+	for (i = prev; i <= next; i++)
+		if (i == next)
+			printf("%d\n", array[i]);
 		else
 			printf("%d, ", array[i]);
 }
@@ -27,21 +28,23 @@ void print_array(int *array, size_t size)
    */
 int binary_search(int *array, size_t size, int value)
 {
-	size_t mid = size / 2;
-	int *nw_arr = NULL;
+	int prev, next, mid;
 
-	if (!array)
-		return (-1);
-	print_array(array, size);
-	if (size == 1 && value != array[mid])
-		return (-1);
-	if (value == array[mid])
+	prev = 0;
+	next = (int)(size - 1);
+	while (prev != next)
 	{
-		return (mid);
+		print_array(array, prev, next);
+		mid = (prev + next) / 2;
+		if (array[mid] == value)
+			return (mid);
+		else if (array[mid] > value)
+			next = mid - 1;
+		else
+			prev = mid + 1;
 	}
-	else if (value < array[mid])
-		nw_arr = array;
-	else if (value > array[mid])
-		nw_arr = &array[mid];
-	return (binary_search(nw_arr, mid, value));
+	print_array(array, prev, next);
+	if (array[prev] == value)
+		return (prev);
+	return (-1);
 }
