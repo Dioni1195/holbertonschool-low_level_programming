@@ -1,4 +1,4 @@
-#ifndef SEARCH_ALGOS_H 
+#ifndef SEARCH_ALGOS_H
 #define SEARCH_ALGOS_H
 #include <stdio.h>
 #include <stdlib.h>
